@@ -1,11 +1,22 @@
 {
-  "name": "danacita-loan-calculator",
-  "version": "1.0.0",
-  "description": "A loan calculator for Dana Cita",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Dennis Juanito",
-  "license": "ISC"
+    "name": "danacita-loan-calculator",
+    "version": "1.0.0",
+    "description": "A loan calculator for Dana Cita",
+    "main": "./dist/index.js",
+    "scripts": {
+        "test": "",
+        "build": "npm run build-ts && npm run tslint && nodemon",
+        "build-ts": "tsc",
+        "tslint": "tslint -c tslint.json -p tsconfig.json"
+    },
+    "author": "Dennis Juanito",
+    "license": "ISC",
+    "dependencies": {
+        "moment": "^2.24.0"
+    },
+    "devDependencies": {
+        "ts-node": "^8.0.2",
+        "tslint": "^5.12.1",
+        "typescript": "^3.3.3"
+    }
 }
