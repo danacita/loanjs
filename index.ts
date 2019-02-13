@@ -5,35 +5,15 @@
  */
 
 import Moment = require('moment');
-
-interface RepaymentScheduleOptions {
-    startDate: Date;
-    tenor: number;
-    interestRatePerYear: number;
-    balanceRequested: number;
-    origination: number;
-    gracePeriod: number;
-    fees: number;
-}
-
-interface RepaymentSchedule {
-    loanDate: string;
-    month: number;
-    balance: number;
-    payment: number;
-    interest: number;
-    principal: number;
-}
+import * as Utils from './src/utils';
+import './src/interfaces';
 
 /**
+ * Create the loan repayment schedule
  *
- * @param {*} startDate "DD-MM-YYYY date object"
- * @param {*} tenor
- * @param {*} interestRatePerYear
- * @param {*} balanceRequested
- * @param {*} origination
- * @param {*} gracePeriod
- * @param {*} fees
+ * @param scheduleRepaymentOption - Based on RepaymentScheduleOptions interface
+ *
+ * @return the JSON of repayment schedule
  */
 const createRepaymentSchedule = ({
     startDate,
@@ -66,10 +46,6 @@ const createRepaymentSchedule = ({
         const L = this._loanAmountAfterOriginationFee();
         const n = this._numberOfPayments();
 
-        // if (this.settings.valueAddedTax !== 0) {
-        //     i = (1 + this._valueAddedTax()) * i; // interest rate with tax
-        // }
-
         return (L * i) / (1 - Math.pow(1 + i, -n));
     };
 
@@ -100,7 +76,7 @@ const createRepaymentSchedule = ({
      * @returns {Number}
      */
     this._numberOfPayments = (): number => {
-        const durationInYears = this._toNumeric(this.tenor) / 12;
+        const durationInYears = Utils._toNumeric(this.tenor) / 12;
         return Math.floor(durationInYears * 12);
     };
 
@@ -150,57 +126,27 @@ const createRepaymentSchedule = ({
     };
 
     /**
-     * Generate the amortization schedule.
+     * Generate the loan repayment schedule.
      * @return {Array}
      */
-    this._schedule = (): Array<RepaymentSchedule> => {
+    this._schedule = (): Array<RepaymentScheduleJSON> => {
         return this._results().map(
-            (value: any): RepaymentSchedule => {
+            (value: any): RepaymentScheduleJSON => {
                 return {
                     loanDate: Moment(value.loanDate).format('DD-MMM-YYYY'),
-                    month: value.month,
-                    balance: this._toMoney(value.balance),
-                    payment: this._toMoney(value.payment),
-                    interest: this._toMoney(value.interest),
-                    principal: this._toMoney(value.principal)
+                    month: value.month.toString(),
+                    balance: Utils._toMoney(value.balance),
+                    payment: Utils._toMoney(value.payment),
+                    interest: Utils._toMoney(value.interest),
+                    principal: Utils._toMoney(value.principal)
                 };
             }
         );
     };
 
-    /**
-     * Convert numeric format to money format.
-     * @param  {Number} numeric
-     * @return {String}
-     */
-    this._toMoney = (numeric: number): string => {
-        if (typeof numeric == 'string') {
-            numeric = parseFloat(numeric);
-        }
-
-        return '$' + numeric.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
-    };
-
-    /**
-     * Convert from money format to numeric format.
-     * @param  {String} value
-     * @return {Number}
-     */
-    this._toNumeric = (value: string): number => {
-        return parseFloat(value.toString().replace(/[^0-9\.]+/g, ''));
-    };
-
-    /**
-     * To convert the provided value to percent format.
-     * @param {Number} numeric
-     * @returns {String}
-     */
-    this._toPercentage = (numeric: number): string => {
-        return (numeric * 100).toFixed(2) + '%';
-    };
-
     return this._schedule();
 };
+
 // console.log(createRepaymentSchedule(null, 12, 32, 6000000, 3.0, null, null));
 // console.log(createRepaymentSchedule(null, 7, 9, 7800000, 7.00, null, null));
 console.log(
