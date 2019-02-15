@@ -4,26 +4,26 @@
  * Released under the MIT license - https://opensource.org/licenses/MIT
  */
 
-import Moment = require('moment');
-import * as Utils from './src/utils';
-import './src/interfaces';
+import Moment from 'moment';
+import * as Utils from './utils';
+import './interfaces';
 
 /**
  * Create the loan repayment schedule
  *
  * @param scheduleRepaymentOption - Based on RepaymentScheduleOptions interface
  *
- * @return the JSON of repayment schedule
+ * @return the object of create repayment schedule
  */
-const createRepaymentSchedule = ({
+export const CreateRepaymentSchedule = ({
     startDate,
-    tenor,
+    tenor = 12,
     interestRatePerYear,
     balanceRequested,
-    origination,
-    gracePeriod,
-    fees
-}: RepaymentScheduleOptions) => {
+    origination = 0,
+    gracePeriod = 0,
+    fees = 0
+}: RepaymentScheduleOptions): any => {
     Object.assign(this, {
         currentDate: startDate,
         tenor,
@@ -41,11 +41,10 @@ const createRepaymentSchedule = ({
      * @see https://en.wikipedia.org/wiki/Compound_interest#Monthly_amortized_loan_or_mortgage_payments
      * @return {Number}
      */
-    this._PMT = (): number => {
+    this._PMT = ():number => {
         const i = this.interestRatePerMonth;
         const L = this._loanAmountAfterOriginationFee();
         const n = this._numberOfPayments();
-
         return (L * i) / (1 - Math.pow(1 + i, -n));
     };
 
@@ -129,7 +128,7 @@ const createRepaymentSchedule = ({
      * Generate the loan repayment schedule.
      * @return {Array}
      */
-    this._schedule = (): Array<RepaymentScheduleJSON> => {
+    this.generateSchedule = (): Array<RepaymentScheduleJSON> => {
         return this._results().map(
             (value: any): RepaymentScheduleJSON => {
                 return {
@@ -143,20 +142,16 @@ const createRepaymentSchedule = ({
             }
         );
     };
-
-    return this._schedule();
 };
 
 // console.log(createRepaymentSchedule(null, 12, 32, 6000000, 3.0, null, null));
 // console.log(createRepaymentSchedule(null, 7, 9, 7800000, 7.00, null, null));
-console.log(
-    createRepaymentSchedule({
-        startDate: new Date(2019, 6, 14),
-        tenor: 17,
-        interestRatePerYear: 44,
-        balanceRequested: 2406000,
-        origination: 12.0,
-        gracePeriod: undefined,
-        fees: undefined
-    })
-);
+
+const createRepaymentScheduleTest = CreateRepaymentSchedule({
+    startDate: new Date(2019, 6, 14),
+    tenor: 17,
+    interestRatePerYear: 44,
+    balanceRequested: 2406000,
+    origination: 12.0
+});
+console.log(createRepaymentScheduleTest._PMT());

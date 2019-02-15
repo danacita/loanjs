@@ -7,12 +7,12 @@
         "noImplicitAny": true,
         "moduleResolution": "node",
         "sourceMap": true,
-        "outDir": "./dist/",
+        "outDir": "./dist/src/",
         "allowJs": true,
         "baseUrl": ".",
         "paths": {
             "*": ["node_modules/*"]
         }
     },
-    "include": ["index.ts"]
+    "include": ["src/**/*"]
 }
