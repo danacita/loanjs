@@ -8,11 +8,11 @@ interface RepaymentScheduleJSON {
 }
 
 interface RepaymentScheduleOptions {
-    startDate: Date; // "DD-MM-YYYY date object"
-    tenor: number;
+    startDate: Date;
+    tenor?: number;
     interestRatePerYear: number;
     balanceRequested: number;
-    origination: number;
-    gracePeriod: number;
-    fees: number;
+    origination?: number;
+    gracePeriod?: number;
+    fees?: number;
 }
