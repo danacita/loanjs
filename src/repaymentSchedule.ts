@@ -8,6 +8,7 @@ import Moment from 'moment';
 import * as Utils from './utils';
 import './interfaces';
 import _ from 'lodash';
+'use strict';
 
 /**
  * Create the loan repayment schedule
@@ -183,6 +184,8 @@ export default class RepaymentSchedule {
         return results;
     };
 }
+
+module.exports = RepaymentSchedule;
 
 // const repaymentScheduleTest = new RepaymentSchedule({
 //     startDate: new Date(2019, 6, 14),

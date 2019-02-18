@@ -1,8 +1,25 @@
 {
-    "name": "danacita-loan-calculator",
-    "version": "1.0.0",
+    "name": "@danacita/loanjs",
+    "version": "1.0.21",
     "description": "A loan calculator for Dana Cita",
     "main": "./dist/src/repaymentSchedule.js",
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.com/danacita/loan-js"
+    },
+    "license": "MIT",
+    "keywords": [
+        "loanjs",
+        "nodejs",
+        "loan",
+        "danacita",
+        "calculator",
+        "loan-calculator",
+        "js",
+        "principal",
+        "interest",
+        "date"
+    ],
     "scripts": {
         "test": "mocha --require ts-node/register test/*.ts",
         "testWithCoverage": "nyc -r lcov -e .ts -x \"test/*.ts\" mocha -r ts-node/register test/**/*.ts && nyc report",
@@ -10,8 +27,10 @@
         "build-ts": "tsc",
         "tslint": "tslint -c tslint.json -p tsconfig.json"
     },
-    "author": "Dennis Juanito",
-    "license": "ISC",
+    "author": {
+        "name": "Dennis Juanito",
+        "email": "dennisjuanito@gmail.com"
+    },
     "dependencies": {
         "@types/lodash": "^4.14.121",
         "lodash": "^4.17.11",
