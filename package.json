@@ -2,7 +2,7 @@
     "name": "danacita-loan-calculator",
     "version": "1.0.0",
     "description": "A loan calculator for Dana Cita",
-    "main": "./dist/src/createRepaymentSchedule.js",
+    "main": "./dist/src/repaymentSchedule.js",
     "scripts": {
         "test": "mocha --require ts-node/register test/*.ts",
         "testWithCoverage": "nyc -r lcov -e .ts -x \"test/*.ts\" mocha -r ts-node/register test/**/*.ts && nyc report",
@@ -13,6 +13,8 @@
     "author": "Dennis Juanito",
     "license": "ISC",
     "dependencies": {
+        "@types/lodash": "^4.14.121",
+        "lodash": "^4.17.11",
         "moment": "^2.24.0"
     },
     "devDependencies": {
