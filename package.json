@@ -1,13 +1,18 @@
 {
     "name": "@danacita/loanjs",
-    "version": "1.0.21",
+    "version": "1.0.4",
     "description": "A loan calculator for Dana Cita",
     "main": "./dist/src/repaymentSchedule.js",
     "repository": {
         "type": "git",
         "url": "https://gitlab.com/danacita/loan-js"
     },
+    "public": true,
     "license": "MIT",
+    "files": [
+        "dist",
+        "README.MD"
+    ],
     "keywords": [
         "loanjs",
         "nodejs",
