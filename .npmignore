@@ -1,0 +1,7 @@
+src/
+test/
+.nyc_output/
+coverage/
+fixtures/
+tslint.json
+tsconfig.json
