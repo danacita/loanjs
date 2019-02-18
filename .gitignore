@@ -13,3 +13,6 @@
 # Test
 .nyc_output
 /coverage
+
+# an unneccessary compiled file
+/dist/src/interfaces.js
