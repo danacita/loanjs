@@ -1,6 +1,6 @@
 {
     "name": "@danacita/loanjs",
-    "version": "1.0.51",
+    "version": "1.0.0",
     "description": "A loan calculator for Dana Cita",
     "main": "./dist/src/repaymentSchedule.js",
     "repository": {
