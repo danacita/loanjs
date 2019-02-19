@@ -398,3 +398,158 @@ export const expectedRepaymentScheduleThree = [
         principal: 252397
     }
 ];
+
+export const expectedRepaymentScheduleGracePeriod = [
+    {
+      "loanDate": "2-Feb-2019",
+      "month": 0,
+      "balance": 36050000,
+      "payment": 0,
+      "interest": 0,
+      "principal": 0
+    },
+    {
+      "loanDate": "2-Mar-2019",
+      "month": 1,
+      "balance": 36050000,
+      "payment": 841167,
+      "interest": 841167,
+      "principal": 0
+    },
+    {
+      "loanDate": "2-Apr-2019",
+      "month": 2,
+      "balance": 36050000,
+      "payment": 841167,
+      "interest": 841167,
+      "principal": 0
+    },
+    {
+      "loanDate": "2-May-2019",
+      "month": 3,
+      "balance": 36050000,
+      "payment": 841167,
+      "interest": 841167,
+      "principal": 0
+    },
+    {
+      "loanDate": "2-Jun-2019",
+      "month": 4,
+      "balance": 36050000,
+      "payment": 841167,
+      "interest": 841167,
+      "principal": 0
+    },
+    {
+      "loanDate": "2-Jul-2019",
+      "month": 5,
+      "balance": 36050000,
+      "payment": 841167,
+      "interest": 841167,
+      "principal": 0
+    },
+    {
+      "loanDate": "2-Aug-2019",
+      "month": 6,
+      "balance": 36050000,
+      "payment": 841167,
+      "interest": 841167,
+      "principal": 0
+    },
+    {
+      "loanDate": "2-Sep-2019",
+      "month": 7,
+      "balance": 33412126,
+      "payment": 3479041,
+      "interest": 841167,
+      "principal": 2637874
+    },
+    {
+      "loanDate": "2-Oct-2019",
+      "month": 8,
+      "balance": 30712701,
+      "payment": 3479041,
+      "interest": 779616,
+      "principal": 2699425
+    },
+    {
+      "loanDate": "2-Nov-2019",
+      "month": 9,
+      "balance": 27950290,
+      "payment": 3479041,
+      "interest": 716630,
+      "principal": 2762411
+    },
+    {
+      "loanDate": "2-Dec-2019",
+      "month": 10,
+      "balance": 25123423,
+      "payment": 3479041,
+      "interest": 652173,
+      "principal": 2826867
+    },
+    {
+      "loanDate": "2-Jan-2020",
+      "month": 11,
+      "balance": 22230595,
+      "payment": 3479041,
+      "interest": 586213,
+      "principal": 2892828
+    },
+    {
+      "loanDate": "2-Feb-2020",
+      "month": 12,
+      "balance": 19270268,
+      "payment": 3479041,
+      "interest": 518714,
+      "principal": 2960327
+    },
+    {
+      "loanDate": "2-Mar-2020",
+      "month": 13,
+      "balance": 16240866,
+      "payment": 3479041,
+      "interest": 449640,
+      "principal": 3029401
+    },
+    {
+      "loanDate": "2-Apr-2020",
+      "month": 14,
+      "balance": 13140779,
+      "payment": 3479041,
+      "interest": 378954,
+      "principal": 3100087
+    },
+    {
+      "loanDate": "2-May-2020",
+      "month": 15,
+      "balance": 9968356,
+      "payment": 3479041,
+      "interest": 306618,
+      "principal": 3172423
+    },
+    {
+      "loanDate": "2-Jun-2020",
+      "month": 16,
+      "balance": 6721911,
+      "payment": 3479041,
+      "interest": 232595,
+      "principal": 3246446
+    },
+    {
+      "loanDate": "2-Jul-2020",
+      "month": 17,
+      "balance": 3399714,
+      "payment": 3479041,
+      "interest": 156845,
+      "principal": 3322196
+    },
+    {
+      "loanDate": "2-Aug-2020",
+      "month": 18,
+      "balance": 0,
+      "payment": 3479041,
+      "interest": 79327,
+      "principal": 3399714
+    }
+  ]

@@ -5,7 +5,8 @@ import '../src/interfaces';
 import {
     expectedRepaymentScheduleOne,
     expectedRepaymentScheduleTwo,
-    expectedRepaymentScheduleThree
+    expectedRepaymentScheduleThree,
+    expectedRepaymentScheduleGracePeriod
 } from '../fixtures/fixtures';
 
 describe('Repayment Schedule', () => {
@@ -70,6 +71,21 @@ describe('Repayment Schedule', () => {
         // Third Case of Repayment Schedule
         const generatedRepaymentScheduleThree = repaymentScheduleThree.generateSchedule();
         expect(generatedRepaymentScheduleThree).to.deep.equal(expectedRepaymentScheduleThree);
+    });
+
+    it('should check the output from generateSchedule from RepaymentSchedulewith grace period', () => {
+        const repaymentScheduleGracePeriod = new RepaymentSchedule({
+            startDate: new Date(2019, 1, 2),
+            tenor: 18,
+            interestRatePerYear: 28,
+            balanceRequested: 35000000,
+            origination: 3.0,
+            gracePeriod: 6
+        });
+        const generatedRepaymentScheduleGracePeriod = repaymentScheduleGracePeriod.generateSchedule();
+        expect(generatedRepaymentScheduleGracePeriod).to.deep.equal(
+            expectedRepaymentScheduleGracePeriod
+        );
     });
 
     it('should throw an error with "Invalid Type for startDate!" text if RepaymentSchedule initialize with an invalid type argument for startDate', () => {

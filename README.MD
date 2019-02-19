@@ -34,7 +34,7 @@ new Repayment(optionsObject)
 | interestPerYear     | number | *required | Interest rate per year in percent
 | balanceRequested    | number | *required | New / additional balance requested
 | origination         | number | 0         | An upfront fee charged by a lender
-| gracePeriod         | number | 0         | A set period of time before borrower must begin repayment of the loan
+| gracePeriod         | number | 0         | A set period of time before borrower må
 | fees                | number | 0         | additional fees
 
 ### Methods
