@@ -62,7 +62,7 @@ class RepaymentSchedule {
         this.generateSchedule = () => {
             return this._results().map((value) => {
                 return {
-                    loanDate: moment_1.default(value.loanDate).format('D-MMM-YYYY'),
+                    date: moment_1.default(value.date).format('D-MMM-YYYY'),
                     month: Math.round(value.month),
                     balance: Math.abs(Math.round(value.balance)),
                     payment: Math.round(value.payment),
@@ -113,7 +113,7 @@ class RepaymentSchedule {
             // that will be appended to the results array.
             for (let paymentNumber = 0; paymentNumber <= numberOfPayments; paymentNumber++) {
                 results.push({
-                    loanDate: this._currentDate,
+                    date: this._currentDate,
                     month,
                     principal: paymentNumber === 0 ? 0 : principal,
                     interest: paymentNumber === 0 ? 0 : interest,
