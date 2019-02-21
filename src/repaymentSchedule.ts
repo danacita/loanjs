@@ -102,7 +102,7 @@ export default class RepaymentSchedule {
         return this._results().map(
             (value: any): RepaymentScheduleJSON => {
                 return {
-                    loanDate: Moment(value.loanDate).format('D-MMM-YYYY'),
+                    date: Moment(value.date).format('D-MMM-YYYY'),
                     month: Math.round(value.month),
                     balance: Math.abs(Math.round(value.balance)),
                     payment: Math.round(value.payment),
@@ -145,7 +145,7 @@ export default class RepaymentSchedule {
      * @return {Array}
      */
     private _results = (): Array<{
-        loanDate: any;
+        date: any;
         month: number;
         principal: number;
         interest: number;
@@ -167,7 +167,7 @@ export default class RepaymentSchedule {
         // that will be appended to the results array.
         for (let paymentNumber = 0; paymentNumber <= numberOfPayments; paymentNumber++) {
             results.push({
-                loanDate: this._currentDate,
+                date: this._currentDate,
                 month,
                 principal: paymentNumber === 0 ? 0 : principal,
                 interest: paymentNumber === 0 ? 0 : interest,

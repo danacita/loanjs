@@ -1,5 +1,5 @@
 interface RepaymentScheduleJSON {
-    loanDate: string;
+    date: string;
     month: number;
     balance: number;
     payment: number;

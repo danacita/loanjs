@@ -34,7 +34,7 @@ new Repayment(optionsObject)
 | interestPerYear     | number | *required | Interest rate per year in percent
 | balanceRequested    | number | *required | New / additional balance requested
 | origination         | number | 0         | An upfront fee charged by a lender
-| gracePeriod         | number | 0         | A set period of time before borrower må
+| gracePeriod         | number | 0         | A set period of time before borrower must begin repayment of the loan
 | fees                | number | 0         | additional fees
 
 ### Methods
@@ -44,7 +44,7 @@ generateSchedule()
 ```js
 [
     {
-        loanDate: '7-May-2017',
+        date: '7-May-2017',
         month: 0,
         balance: 1375000,
         payment: 0,
@@ -52,7 +52,7 @@ generateSchedule()
         principal: 0
     },
     {
-        loanDate: '7-Jun-2017',
+        date: '7-Jun-2017',
         month: 1,
         balance: 1183428,
         payment: 203031,
@@ -60,7 +60,7 @@ generateSchedule()
         principal: 191572
     },
     {
-        loanDate: '7-Jul-2017',
+        date: '7-Jul-2017',
         month: 2,
         balance: 990259,
         payment: 203031,
@@ -68,7 +68,7 @@ generateSchedule()
         principal: 193169
     },
     {
-        loanDate: '7-Aug-2017',
+        date: '7-Aug-2017',
         month: 3,
         balance: 795481,
         payment: 203031,
@@ -76,7 +76,7 @@ generateSchedule()
         principal: 194778
     },
     {
-        loanDate: '7-Sep-2017',
+        date: '7-Sep-2017',
         month: 4,
         balance: 599079,
         payment: 203031,
@@ -84,7 +84,7 @@ generateSchedule()
         principal: 196402
     },
     {
-        loanDate: '7-Oct-2017',
+        date: '7-Oct-2017',
         month: 5,
         balance: 401041,
         payment: 203031,
@@ -92,7 +92,7 @@ generateSchedule()
         principal: 198038
     },
     {
-        loanDate: '7-Nov-2017',
+        date: '7-Nov-2017',
         month: 6,
         balance: 201353,
         payment: 203031,
@@ -100,7 +100,7 @@ generateSchedule()
         principal: 199689
     },
     {
-        loanDate: '7-Dec-2017',
+        date: '7-Dec-2017',
         month: 7,
         balance: 0,
         payment: 203031,
