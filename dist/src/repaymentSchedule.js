@@ -166,7 +166,7 @@ class RepaymentSchedule {
         this._currentDate = startDate;
         this._tenor = tenor;
         this._interestRatePerYear = interestRatePerYear / 100;
-        this._interestRatePerMonth = interestRatePerYear / 12 / 100;
+        this._interestRatePerMonth = (this._interestRatePerYear === 0) ? 0.00000000000001 : interestRatePerYear / 12 / 100;
         this._loanAmount = balanceRequested;
         this._origination = origination;
         this._gracePeriod = gracePeriod;
@@ -174,13 +174,4 @@ class RepaymentSchedule {
     }
 }
 exports.default = RepaymentSchedule;
-// const repaymentScheduleTest = new RepaymentSchedule({
-//     startDate: new Date(2019, 1, 2),
-//     tenor: 18,
-//     interestRatePerYear: 28,
-//     balanceRequested: 35000000,
-//     origination: 3.0,
-//     gracePeriod: 6
-// });
-// console.log(repaymentScheduleTest.generateSchedule());
 module.exports = RepaymentSchedule;

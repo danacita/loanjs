@@ -57,7 +57,7 @@ export default class RepaymentSchedule {
         this._currentDate = startDate;
         this._tenor = tenor;
         this._interestRatePerYear = interestRatePerYear / 100;
-        this._interestRatePerMonth = interestRatePerYear / 12 / 100;
+        this._interestRatePerMonth = (this._interestRatePerYear === 0) ? 0.00000000000001 : interestRatePerYear / 12 / 100;
         this._loanAmount = balanceRequested;
         this._origination = origination;
         this._gracePeriod = gracePeriod;
@@ -125,6 +125,7 @@ export default class RepaymentSchedule {
      */
     private _PMT = (): number => {
         const i = this._interestRatePerMonth;
+
         const L = this._loanAmountAfterOriginationFee();
         const n = this._numberOfPayments() - this._gracePeriod;
         return (L * i) / (1 - Math.pow(1 + i, -n));
