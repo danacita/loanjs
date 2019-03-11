@@ -10,7 +10,7 @@ npm i @danacita/loanjs
 let repaymentSchedule = new RepaymentSchedule({
             startDate: new Date(2017, 4, 7),
             tenor: 7,
-            interestRatePerYear: 10,
+            interestRatePerYear: 10.0,
             balanceRequested: 1250000,
             origination: 10.0
 });
@@ -31,11 +31,10 @@ new Repayment(optionsObject)
 | --------------------| ------ | --------- | -----------------------------------------------------------------------
 | startDate           | Date   | *required | The starting date of the loan
 | tenor               | number | 12        | The amount of time left for the repayment of the loan
-| interestPerYear     | number | *required | Interest rate per year in percent
+| interestPerYear     | number | *required | The effective interest rate per year in percent (e.g: 20.5)
 | balanceRequested    | number | *required | New / additional balance requested
-| origination         | number | 0         | An upfront fee charged by a lender
+| origination         | number | 0         | An upfront fee charged by a lender in percent (e.g: 3.5)
 | gracePeriod         | number | 0         | A set period of time before borrower must begin repayment of the loan
-| fees                | number | 0         | additional fees
 
 ### Methods
 generateSchedule()
