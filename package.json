@@ -37,7 +37,8 @@
     "email": "dennisjuanito@gmail.com"
   },
   "contributors": [
-    "Veri Ferdiansyah <veri@danacita.com>"
+    "Veri Ferdiansyah <veri@danacita.com>",
+    "Kai Yuan Neo <kai@danacita.com"
   ],
   "dependencies": {
     "@types/lodash": "^4.14.121",

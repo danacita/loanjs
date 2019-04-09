@@ -104,11 +104,15 @@ export default class RepaymentSchedule {
       (value: any): RepaymentScheduleJSON => {
         return {
           date: moment(value.date).format('D-MMM-YYYY'),
-          month: Math.round(value.month),
-          balance: Math.abs(Math.round(value.balance)),
-          payment: Math.round(value.payment),
-          interest: Math.round(value.interest),
-          principal: Math.round(value.principal)
+          month: value.month,
+          // Use ceiling on balance to avoid negative balance
+          // Use absolute value on balance to avoid -0
+          balance: Math.abs(Math.ceil(value.balance)),
+          // Use ceiling as scheduled payment to avoid off-by-one errors, such that
+          // borrower can always pay an integer amount and it will always be sufficient.
+          payment: Math.ceil(value.payment),
+          interest: value.interest,
+          principal: value.principal
         };
       }
     );
