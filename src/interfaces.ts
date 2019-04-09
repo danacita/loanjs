@@ -1,18 +1,18 @@
 interface RepaymentScheduleJSON {
-    date: string;
-    month: number;
-    balance: number;
-    payment: number;
-    interest: number;
-    principal: number;
+  date: string;
+  month: number;
+  balance: number;
+  payment: number;
+  interest: number;
+  principal: number;
 }
 
 interface RepaymentScheduleOptions {
-    startDate: any;
-    tenor?: number;
-    interestRatePerYear: number;
-    balanceRequested: number;
-    origination?: number;
-    gracePeriod?: number;
-    fees?: number;
+  startDate: any;
+  tenor?: number;
+  interestRatePerYear: number;
+  balanceRequested: number;
+  origination?: number;
+  gracePeriod?: number;
+  fees?: number;
 }

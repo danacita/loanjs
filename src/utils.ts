@@ -4,11 +4,11 @@
  * @return {String}
  */
 export const _toMoney = (numeric: number): string => {
-    if (typeof numeric == 'string') {
-        numeric = parseFloat(numeric);
-    }
+  if (typeof numeric == 'string') {
+    numeric = parseFloat(numeric);
+  }
 
-    return numeric.toFixed(0).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+  return numeric.toFixed(0).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 };
 
 /**
@@ -17,7 +17,7 @@ export const _toMoney = (numeric: number): string => {
  * @return {Number}
  */
 export const _toNumeric = (value: string): number => {
-    return parseFloat(value.toString().replace(/[^0-9\.]+/g, ''));
+  return parseFloat(value.toString().replace(/[^0-9\.]+/g, ''));
 };
 
 /**
@@ -26,7 +26,7 @@ export const _toNumeric = (value: string): number => {
  * @returns {String}
  */
 export const _toPercentage = (numeric: number): string => {
-    return (numeric * 100).toFixed(0) + '%';
+  return (numeric * 100).toFixed(0) + '%';
 };
 
 /**
@@ -35,17 +35,17 @@ export const _toPercentage = (numeric: number): string => {
  * @returns {Boolean}
  */
 export const _isInvalidDate = (value: any): boolean => {
-    if (Object.prototype.toString.call(value) === '[object Date]') {
-        // it is a date
-        if (isNaN(value.getTime())) {
-            // date is not valid
-            return true;
-        } else {
-            // date is valid
-            return false;
-        }
+  if (Object.prototype.toString.call(value) === '[object Date]') {
+    // it is a date
+    if (isNaN(value.getTime())) {
+      // date is not valid
+      return true;
+    } else {
+      // date is valid
+      return false;
     }
-    return true;
+  }
+  return true;
 };
 
 /**
@@ -55,5 +55,5 @@ export const _isInvalidDate = (value: any): boolean => {
  * @return {Boolean}
  */
 export const _isPositive = (value: number): boolean => {
-    return (value >= 0) ? true : false;
+  return value >= 0 ? true : false;
 };

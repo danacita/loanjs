@@ -1,0 +1,555 @@
+export const expectedRepaymentScheduleOne = [
+  {
+    date: '14-Jul-2019',
+    month: 0,
+    balance: 2694720,
+    payment: 0,
+    interest: 0,
+    principal: 0
+  },
+  {
+    date: '14-Aug-2019',
+    month: 1,
+    balance: 2577712,
+    payment: 215814,
+    interest: 98806,
+    principal: 117008
+  },
+  {
+    date: '14-Sep-2019',
+    month: 2,
+    balance: 2456414,
+    payment: 215814,
+    interest: 94516,
+    principal: 121298
+  },
+  {
+    date: '14-Oct-2019',
+    month: 3,
+    balance: 2330669,
+    payment: 215814,
+    interest: 90069,
+    principal: 125746
+  },
+  {
+    date: '14-Nov-2019',
+    month: 4,
+    balance: 2200312,
+    payment: 215814,
+    interest: 85458,
+    principal: 130356
+  },
+  {
+    date: '14-Dec-2019',
+    month: 5,
+    balance: 2065176,
+    payment: 215814,
+    interest: 80678,
+    principal: 135136
+  },
+  {
+    date: '14-Jan-2020',
+    month: 6,
+    balance: 1925085,
+    payment: 215814,
+    interest: 75723,
+    principal: 140091
+  },
+  {
+    date: '14-Feb-2020',
+    month: 7,
+    balance: 1779858,
+    payment: 215814,
+    interest: 70586,
+    principal: 145228
+  },
+  {
+    date: '14-Mar-2020',
+    month: 8,
+    balance: 1629305,
+    payment: 215814,
+    interest: 65261,
+    principal: 150553
+  },
+  {
+    date: '14-Apr-2020',
+    month: 9,
+    balance: 1473232,
+    payment: 215814,
+    interest: 59741,
+    principal: 156073
+  },
+  {
+    date: '14-May-2020',
+    month: 10,
+    balance: 1311436,
+    payment: 215814,
+    interest: 54019,
+    principal: 161796
+  },
+  {
+    date: '14-Jun-2020',
+    month: 11,
+    balance: 1143708,
+    payment: 215814,
+    interest: 48086,
+    principal: 167728
+  },
+  {
+    date: '14-Jul-2020',
+    month: 12,
+    balance: 969830,
+    payment: 215814,
+    interest: 41936,
+    principal: 173878
+  },
+  {
+    date: '14-Aug-2020',
+    month: 13,
+    balance: 789576,
+    payment: 215814,
+    interest: 35560,
+    principal: 180254
+  },
+  {
+    date: '14-Sep-2020',
+    month: 14,
+    balance: 602713,
+    payment: 215814,
+    interest: 28951,
+    principal: 186863
+  },
+  {
+    date: '14-Oct-2020',
+    month: 15,
+    balance: 408998,
+    payment: 215814,
+    interest: 22099,
+    principal: 193715
+  },
+  {
+    date: '14-Nov-2020',
+    month: 16,
+    balance: 208181,
+    payment: 215814,
+    interest: 14997,
+    principal: 200818
+  },
+  {
+    date: '14-Dec-2020',
+    month: 17,
+    balance: 0,
+    payment: 215814,
+    interest: 7633,
+    principal: 208181
+  }
+];
+
+export const expectedRepaymentScheduleTwo = [
+  {
+    date: '7-May-2017',
+    month: 0,
+    balance: 1375000,
+    payment: 0,
+    interest: 0,
+    principal: 0
+  },
+  {
+    date: '7-Jun-2017',
+    month: 1,
+    balance: 1183428,
+    payment: 203031,
+    interest: 11458,
+    principal: 191572
+  },
+  {
+    date: '7-Jul-2017',
+    month: 2,
+    balance: 990259,
+    payment: 203031,
+    interest: 9862,
+    principal: 193169
+  },
+  {
+    date: '7-Aug-2017',
+    month: 3,
+    balance: 795481,
+    payment: 203031,
+    interest: 8252,
+    principal: 194778
+  },
+  {
+    date: '7-Sep-2017',
+    month: 4,
+    balance: 599079,
+    payment: 203031,
+    interest: 6629,
+    principal: 196402
+  },
+  {
+    date: '7-Oct-2017',
+    month: 5,
+    balance: 401041,
+    payment: 203031,
+    interest: 4992,
+    principal: 198038
+  },
+  {
+    date: '7-Nov-2017',
+    month: 6,
+    balance: 201353,
+    payment: 203031,
+    interest: 3342,
+    principal: 199689
+  },
+  {
+    date: '7-Dec-2017',
+    month: 7,
+    balance: 0,
+    payment: 203031,
+    interest: 1678,
+    principal: 201353
+  }
+];
+
+export const expectedRepaymentScheduleThree = [
+  {
+    date: '8-Dec-2022',
+    month: 0,
+    balance: 4656115,
+    payment: 0,
+    interest: 0,
+    principal: 0
+  },
+  {
+    date: '8-Jan-2023',
+    month: 1,
+    balance: 4480783,
+    payment: 256814,
+    interest: 81482,
+    principal: 175332
+  },
+  {
+    date: '8-Feb-2023',
+    month: 2,
+    balance: 4302382,
+    payment: 256814,
+    interest: 78414,
+    principal: 178401
+  },
+  {
+    date: '8-Mar-2023',
+    month: 3,
+    balance: 4120859,
+    payment: 256814,
+    interest: 75292,
+    principal: 181523
+  },
+  {
+    date: '8-Apr-2023',
+    month: 4,
+    balance: 3936160,
+    payment: 256814,
+    interest: 72115,
+    principal: 184699
+  },
+  {
+    date: '8-May-2023',
+    month: 5,
+    balance: 3748228,
+    payment: 256814,
+    interest: 68883,
+    principal: 187932
+  },
+  {
+    date: '8-Jun-2023',
+    month: 6,
+    balance: 3557008,
+    payment: 256814,
+    interest: 65594,
+    principal: 191220
+  },
+  {
+    date: '8-Jul-2023',
+    month: 7,
+    balance: 3362441,
+    payment: 256814,
+    interest: 62248,
+    principal: 194567
+  },
+  {
+    date: '8-Aug-2023',
+    month: 8,
+    balance: 3164469,
+    payment: 256814,
+    interest: 58843,
+    principal: 197972
+  },
+  {
+    date: '8-Sep-2023',
+    month: 9,
+    balance: 2963033,
+    payment: 256814,
+    interest: 55378,
+    principal: 201436
+  },
+  {
+    date: '8-Oct-2023',
+    month: 10,
+    balance: 2758071,
+    payment: 256814,
+    interest: 51853,
+    principal: 204961
+  },
+  {
+    date: '8-Nov-2023',
+    month: 11,
+    balance: 2549523,
+    payment: 256814,
+    interest: 48266,
+    principal: 208548
+  },
+  {
+    date: '8-Dec-2023',
+    month: 12,
+    balance: 2337325,
+    payment: 256814,
+    interest: 44617,
+    principal: 212198
+  },
+  {
+    date: '8-Jan-2024',
+    month: 13,
+    balance: 2121414,
+    payment: 256814,
+    interest: 40903,
+    principal: 215911
+  },
+  {
+    date: '8-Feb-2024',
+    month: 14,
+    balance: 1901725,
+    payment: 256814,
+    interest: 37125,
+    principal: 219690
+  },
+  {
+    date: '8-Mar-2024',
+    month: 15,
+    balance: 1678190,
+    payment: 256814,
+    interest: 33280,
+    principal: 223534
+  },
+  {
+    date: '8-Apr-2024',
+    month: 16,
+    balance: 1450744,
+    payment: 256814,
+    interest: 29368,
+    principal: 227446
+  },
+  {
+    date: '8-May-2024',
+    month: 17,
+    balance: 1219318,
+    payment: 256814,
+    interest: 25388,
+    principal: 231426
+  },
+  {
+    date: '8-Jun-2024',
+    month: 18,
+    balance: 983841,
+    payment: 256814,
+    interest: 21338,
+    principal: 235476
+  },
+  {
+    date: '8-Jul-2024',
+    month: 19,
+    balance: 744244,
+    payment: 256814,
+    interest: 17217,
+    principal: 239597
+  },
+  {
+    date: '8-Aug-2024',
+    month: 20,
+    balance: 500454,
+    payment: 256814,
+    interest: 13024,
+    principal: 243790
+  },
+  {
+    date: '8-Sep-2024',
+    month: 21,
+    balance: 252397,
+    payment: 256814,
+    interest: 8758,
+    principal: 248056
+  },
+  {
+    date: '8-Oct-2024',
+    month: 22,
+    balance: 0,
+    payment: 256814,
+    interest: 4417,
+    principal: 252397
+  }
+];
+
+export const expectedRepaymentScheduleGracePeriod = [
+  {
+    date: '2-Feb-2019',
+    month: 0,
+    balance: 36050000,
+    payment: 0,
+    interest: 0,
+    principal: 0
+  },
+  {
+    date: '2-Mar-2019',
+    month: 1,
+    balance: 36050000,
+    payment: 841167,
+    interest: 841167,
+    principal: 0
+  },
+  {
+    date: '2-Apr-2019',
+    month: 2,
+    balance: 36050000,
+    payment: 841167,
+    interest: 841167,
+    principal: 0
+  },
+  {
+    date: '2-May-2019',
+    month: 3,
+    balance: 36050000,
+    payment: 841167,
+    interest: 841167,
+    principal: 0
+  },
+  {
+    date: '2-Jun-2019',
+    month: 4,
+    balance: 36050000,
+    payment: 841167,
+    interest: 841167,
+    principal: 0
+  },
+  {
+    date: '2-Jul-2019',
+    month: 5,
+    balance: 36050000,
+    payment: 841167,
+    interest: 841167,
+    principal: 0
+  },
+  {
+    date: '2-Aug-2019',
+    month: 6,
+    balance: 36050000,
+    payment: 841167,
+    interest: 841167,
+    principal: 0
+  },
+  {
+    date: '2-Sep-2019',
+    month: 7,
+    balance: 33412126,
+    payment: 3479041,
+    interest: 841167,
+    principal: 2637874
+  },
+  {
+    date: '2-Oct-2019',
+    month: 8,
+    balance: 30712701,
+    payment: 3479041,
+    interest: 779616,
+    principal: 2699425
+  },
+  {
+    date: '2-Nov-2019',
+    month: 9,
+    balance: 27950290,
+    payment: 3479041,
+    interest: 716630,
+    principal: 2762411
+  },
+  {
+    date: '2-Dec-2019',
+    month: 10,
+    balance: 25123423,
+    payment: 3479041,
+    interest: 652173,
+    principal: 2826867
+  },
+  {
+    date: '2-Jan-2020',
+    month: 11,
+    balance: 22230595,
+    payment: 3479041,
+    interest: 586213,
+    principal: 2892828
+  },
+  {
+    date: '2-Feb-2020',
+    month: 12,
+    balance: 19270268,
+    payment: 3479041,
+    interest: 518714,
+    principal: 2960327
+  },
+  {
+    date: '2-Mar-2020',
+    month: 13,
+    balance: 16240866,
+    payment: 3479041,
+    interest: 449640,
+    principal: 3029401
+  },
+  {
+    date: '2-Apr-2020',
+    month: 14,
+    balance: 13140779,
+    payment: 3479041,
+    interest: 378954,
+    principal: 3100087
+  },
+  {
+    date: '2-May-2020',
+    month: 15,
+    balance: 9968356,
+    payment: 3479041,
+    interest: 306618,
+    principal: 3172423
+  },
+  {
+    date: '2-Jun-2020',
+    month: 16,
+    balance: 6721911,
+    payment: 3479041,
+    interest: 232595,
+    principal: 3246446
+  },
+  {
+    date: '2-Jul-2020',
+    month: 17,
+    balance: 3399714,
+    payment: 3479041,
+    interest: 156845,
+    principal: 3322196
+  },
+  {
+    date: '2-Aug-2020',
+    month: 18,
+    balance: 0,
+    payment: 3479041,
+    interest: 79327,
+    principal: 3399714
+  }
+];
