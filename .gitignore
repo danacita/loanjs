@@ -5,7 +5,7 @@
 /node_modules
 
 # Ignore built ts files
-# dist/**/*
+/dist
 
 # OS metadata
 .DS_Store
@@ -13,6 +13,3 @@
 # Test
 .nyc_output
 /coverage
-
-# an unneccessary compiled file
-/dist/src/interfaces.js
