@@ -125,5 +125,5 @@ generateSchedule();
 ```
 
 ## License
-Copyright (c) 2019 Dana Cita
+Copyright (c) 2019 Dana Cita  
 Licensed under the MIT license.
