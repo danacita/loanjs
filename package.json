@@ -26,8 +26,8 @@
     "date"
   ],
   "scripts": {
-    "test": "mocha --require ts-node/register test/*.ts",
-    "test:coverage": "nyc --reporter=html --reporter=text --extension .ts --exclude \"src/**/*.spec.ts\" mocha --require ts-node/register src/test/*.spec.ts",
+    "test": "mocha --require ts-node/register src/**/*.spec.ts",
+    "test:coverage": "nyc --reporter=html --reporter=text --extension .ts --exclude \"src/**/*.spec.ts\" mocha --require ts-node/register src/**/*.spec.ts",
     "build": "npm run build-ts && npm run tslint",
     "build-ts": "tsc",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
