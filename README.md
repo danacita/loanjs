@@ -1,4 +1,4 @@
-# Loanjs ![npm](https://img.shields.io/npm/v/@danacita/loanjs.svg) ![NPM](https://img.shields.io/npm/l/@danacita/loanjs.svg)
+# Loanjs [![Build Status](https://travis-ci.com/danacita/loanjs.svg?branch=master)](https://travis-ci.com/danacita/loanjs) [![Coverage Status](https://coveralls.io/repos/github/danacita/loanjs/badge.svg?branch=master)](https://coveralls.io/github/danacita/loanjs?branch=master) ![npm](https://img.shields.io/npm/v/@danacita/loanjs.svg) ![NPM](https://img.shields.io/npm/l/@danacita/loanjs.svg)
 
 Loanjs is a loan calculator that we use internally at Dana Cita.
 
@@ -38,14 +38,14 @@ new Repayment(options);
 
 #### Options
 
-| Properties          | Type   | Default   | Description
-| --------------------| ------ | --------- | -----------------------------------------------------------------------
-| startDate           | Date   | *required | The starting date of the loan
-| tenor               | number | 12        | The amount of time left for the repayment of the loan
-| interestPerYear     | number | *required | The effective interest rate per year in percent (e.g: 20.5)
-| balanceRequested    | number | *required | New / additional balance requested
-| origination         | number | 0         | An upfront fee charged by a lender in percent (e.g: 3.5)
-| gracePeriod         | number | 0         | A set period of time before borrower must begin repayment of the loan
+| Properties       | Type   | Default    | Description                                                           |
+| ---------------- | ------ | ---------- | --------------------------------------------------------------------- |
+| startDate        | Date   | \*required | The starting date of the loan                                         |
+| tenor            | number | 12         | The amount of time left for the repayment of the loan                 |
+| interestPerYear  | number | \*required | The effective interest rate per year in percent (e.g: 20.5)           |
+| balanceRequested | number | \*required | New / additional balance requested                                    |
+| origination      | number | 0          | An upfront fee charged by a lender in percent (e.g: 3.5)              |
+| gracePeriod      | number | 0          | A set period of time before borrower must begin repayment of the loan |
 
 ### Generate Schedule
 
@@ -125,5 +125,6 @@ generateSchedule();
 ```
 
 ## License
+
 Copyright (c) 2019 Dana Cita  
 Licensed under the MIT license.
