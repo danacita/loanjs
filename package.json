@@ -1,55 +1,58 @@
 {
-    "name": "@danacita/loanjs",
-    "version": "1.1.2",
-    "description": "A loan calculator for Dana Cita",
-    "main": "./dist/src/repaymentSchedule.js",
-    "repository": {
-        "type": "git",
-        "url": "https://gitlab.com/danacita/loan-js"
-    },
-    "public": true,
-    "license": "MIT",
-    "files": [
-        "dist",
-        "README.MD"
-    ],
-    "keywords": [
-        "loanjs",
-        "nodejs",
-        "loan",
-        "danacita",
-        "calculator",
-        "loan-calculator",
-        "js",
-        "principal",
-        "interest",
-        "date"
-    ],
-    "scripts": {
-        "test": "mocha --require ts-node/register test/*.ts",
-        "testWithCoverage": "nyc -r lcov -e .ts -x \"test/*.ts\" mocha -r ts-node/register test/**/*.ts && nyc report",
-        "build": "npm run build-ts && npm run tslint && nodemon",
-        "build-ts": "tsc",
-        "tslint": "tslint -c tslint.json -p tsconfig.json"
-    },
-    "author": {
-        "name": "Dennis Juanito",
-        "email": "dennisjuanito@gmail.com"
-    },
-    "dependencies": {
-        "@types/lodash": "^4.14.121",
-        "lodash": "^4.17.11",
-        "moment": "^2.24.0"
-    },
-    "devDependencies": {
-        "@types/chai": "^4.1.7",
-        "@types/mocha": "^5.2.6",
-        "@types/node": "^11.9.3",
-        "chai": "^4.2.0",
-        "mocha": "^5.2.0",
-        "nyc": "^13.2.0",
-        "ts-node": "^8.0.2",
-        "tslint": "^5.12.1",
-        "typescript": "^3.3.3"
-    }
+  "name": "@danacita/loanjs",
+  "version": "1.1.3",
+  "description": "A loan calculator for Dana Cita",
+  "main": "./dist/repaymentSchedule.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danacita/loanjs"
+  },
+  "homepage": "https://github.com/danacita/loanjs#readme",
+  "bugs": {
+    "url": "https://github.com/danacita/loanjs/issues"
+  },
+  "public": true,
+  "license": "MIT",
+  "keywords": [
+    "loanjs",
+    "nodejs",
+    "loan",
+    "danacita",
+    "calculator",
+    "loan-calculator",
+    "js",
+    "principal",
+    "interest",
+    "date"
+  ],
+  "scripts": {
+    "test": "mocha --require ts-node/register test/*.ts",
+    "test:coverage": "nyc --reporter=html --reporter=text --extension .ts --exclude \"src/**/*.spec.ts\" mocha --require ts-node/register src/test/*.spec.ts",
+    "build": "npm run build-ts && npm run tslint",
+    "build-ts": "tsc",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "author": {
+    "name": "Dennis Juanito",
+    "email": "dennisjuanito@gmail.com"
+  },
+  "contributors": [
+    "Veri Ferdiansyah <veri@danacita.com>"
+  ],
+  "dependencies": {
+    "@types/lodash": "^4.14.121",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.9.3",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.3.0",
+    "ts-node": "^8.0.2",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  }
 }
