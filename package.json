@@ -26,10 +26,12 @@
     "date"
   ],
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text --extension .ts --exclude \"src/**/*.spec.ts\" mocha --require ts-node/register src/**/*.spec.ts",
-    "build": "npm run build-ts && npm run tslint",
-    "build-ts": "tsc",
-    "tslint": "tslint -c tslint.json -p tsconfig.json"
+    "pretest": "npm run test:clean && npm run tslint",
+    "test:clean": "rimraf ./coverage",
+    "test": "nyc --reporter=lcov --reporter=text --extension .ts --exclude \"src/**/*.spec.ts\" mocha --require ts-node/register src/**/*.spec.ts",
+    "build": "tsc",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "author": {
     "name": "Dennis Juanito",
@@ -49,8 +51,10 @@
     "@types/mocha": "^5.2.6",
     "@types/node": "^11.9.3",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.3",
     "mocha": "^5.2.0",
     "nyc": "^13.3.0",
+    "rimraf": "^2.6.3",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
     "typescript": "^3.3.3"
