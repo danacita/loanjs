@@ -1,8 +1,9 @@
 {
   "name": "@danacita/loanjs",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "A loan calculator for Dana Cita",
-  "main": "./dist/repaymentSchedule.js",
+  "main": "dist/repaymentSchedule.js",
+  "module": "dist/repaymentSchedule.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/danacita/loanjs"
@@ -29,7 +30,7 @@
     "pretest": "npm run test:clean && npm run tslint",
     "test:clean": "rimraf ./coverage",
     "test": "nyc --reporter=lcov --reporter=text --extension .ts --exclude \"src/**/*.spec.ts\" mocha --require ts-node/register src/**/*.spec.ts",
-    "build": "tsc",
+    "build": "rm -rf dist && tsc",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },

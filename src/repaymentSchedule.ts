@@ -1,9 +1,3 @@
-/*
- * Dana Cita Loan Calculator 1.0.0
- *
- * Released under the MIT license - https://opensource.org/licenses/MIT
- */
-
 import _ from 'lodash';
 import moment from 'moment';
 
