@@ -1,9 +1,8 @@
 {
-  "name": "@danacita/loanjs",
-  "version": "1.1.5",
-  "description": "A loan calculator for Dana Cita",
-  "main": "dist/repaymentSchedule.js",
-  "module": "dist/repaymentSchedule.js",
+  "name": "@danacita/stark",
+  "version": "2.0.0",
+  "description": "Dana Cita loan calculator",
+  "main": "dist/stark.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/danacita/loanjs"
@@ -43,21 +42,22 @@
     "Kai Yuan Neo <kai@danacita.com"
   ],
   "dependencies": {
-    "@types/lodash": "^4.14.121",
-    "lodash": "^4.17.11",
-    "moment": "^2.24.0"
+    "financejs": "4.1.0",
+    "moment": "2.24.0"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^11.9.3",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^11.13.15",
     "chai": "^4.2.0",
-    "coveralls": "^3.0.3",
+    "coveralls": "^3.0.4",
     "mocha": "^5.2.0",
-    "nyc": "^13.3.0",
+    "nyc": "^14.1.1",
     "rimraf": "^2.6.3",
-    "ts-node": "^8.0.2",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.3"
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.5.2"
   }
 }
