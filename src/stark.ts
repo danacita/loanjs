@@ -1,8 +1,6 @@
 import { Finance } from 'financejs';
 import moment from 'moment';
 
-import './interface';
-
 export default class Stark {
   /**
    * Amortization schedule.
