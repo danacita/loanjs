@@ -1,4 +1,4 @@
-# Stark [![Build Status](https://travis-ci.com/danacita/loanjs.svg?branch=master)](https://travis-ci.com/danacita/loanjs) [![Coverage Status](https://coveralls.io/repos/github/danacita/loanjs/badge.svg?branch=master)](https://coveralls.io/github/danacita/loanjs?branch=master) ![npm](https://img.shields.io/npm/v/@danacita/loanjs.svg) ![NPM](https://img.shields.io/npm/l/@danacita/loanjs.svg)
+# Stark [![Build Status](https://travis-ci.com/danacita/loanjs.svg?branch=master)](https://travis-ci.com/danacita/loanjs) [![Coverage Status](https://coveralls.io/repos/github/danacita/loanjs/badge.svg?branch=master)](https://coveralls.io/github/danacita/loanjs?branch=master) ![npm](https://img.shields.io/npm/v/@danacita/stark.svg) ![NPM](https://img.shields.io/npm/l/@danacita/stark.svg)
 
 Stark is a loan calculator that we use internally at Dana Cita.
 
