@@ -1,127 +1,150 @@
-# Loanjs [![Build Status](https://travis-ci.com/danacita/loanjs.svg?branch=master)](https://travis-ci.com/danacita/loanjs) [![Coverage Status](https://coveralls.io/repos/github/danacita/loanjs/badge.svg?branch=master)](https://coveralls.io/github/danacita/loanjs?branch=master) ![npm](https://img.shields.io/npm/v/@danacita/loanjs.svg) ![NPM](https://img.shields.io/npm/l/@danacita/loanjs.svg)
+# Stark [![Build Status](https://travis-ci.com/danacita/loanjs.svg?branch=master)](https://travis-ci.com/danacita/loanjs) [![Coverage Status](https://coveralls.io/repos/github/danacita/loanjs/badge.svg?branch=master)](https://coveralls.io/github/danacita/loanjs?branch=master) ![npm](https://img.shields.io/npm/v/@danacita/loanjs.svg) ![NPM](https://img.shields.io/npm/l/@danacita/loanjs.svg)
 
-Loanjs is a loan calculator that we use internally at Dana Cita.
+Stark is a loan calculator that we use internally at Dana Cita.
 
 ## Installation
 
+```bash
+npm i @danacita/stark
 ```
-npm i @danacita/loanjs
+
+## Usage
+
+```js
+var Stark = require('@danacita/stark');
+const stark = new Stark();
+
+// or
+
+import Stark from '@danacita/stark';
+const stark = new Stark();
 ```
 
 ## Features
 
-### Creating a new Repayment Schedule
+### Generate amortization schedule
+
+Amortization is the paying off of debt with a fixed repayment schedule in regular installments over a period of time.
 
 ```js
-let repaymentSchedule = new RepaymentSchedule({
-  startDate: new Date(2017, 4, 7),
-  tenor: 7,
-  interestRatePerYear: 10.0,
-  balanceRequested: 1250000,
-  origination: 10.0
-});
-```
-
-### Generate a new Repayment Schedule
-
-```js
-repaymentSchedule.generateSchedule();
-```
-
-## Documentation
-
-### Repayment Schedule
-
-```js
-new Repayment(options);
-```
-
-#### Options
-
-| Properties       | Type   | Default    | Description                                                           |
-| ---------------- | ------ | ---------- | --------------------------------------------------------------------- |
-| startDate        | Date   | \*required | The starting date of the loan                                         |
-| tenor            | number | 12         | The amount of time left for the repayment of the loan                 |
-| interestPerYear  | number | \*required | The effective interest rate per year in percent (e.g: 20.5)           |
-| balanceRequested | number | \*required | New / additional balance requested                                    |
-| origination      | number | 0          | An upfront fee charged by a lender in percent (e.g: 3.5)              |
-| gracePeriod      | number | 0          | A set period of time before borrower must begin repayment of the loan |
-
-### Generate Schedule
-
-```js
-generateSchedule();
-```
-
-#### Returns
-
-```js
+const amortization = stark.Amortization(rate, tenor, principal, startDate, gracePeriod);
+/*
 [
   {
-    date: '7-May-2017',
+    date: '14-Jul-2019',
     month: 0,
-    balance: 1375000,
-    payment: 0,
-    interest: 0,
-    principal: 0
+    monthlyPayment: 0,
+    principalAmount: 0,
+    interestAmount: 0,
+    outstandingBalance: 10300000
   },
   {
-    date: '7-Jun-2017',
+    date: '14-Aug-2019',
     month: 1,
-    balance: 1183428,
-    payment: 203031,
-    interest: 11458,
-    principal: 191572
+    monthlyPayment: 1014277.4141810436,
+    principalAmount: 739610.747514377,
+    interestAmount: 274666.6666666666,
+    outstandingBalance: 9560390
   },
   {
-    date: '7-Jul-2017',
+    date: '14-Sep-2019',
     month: 2,
-    balance: 990259,
-    payment: 203031,
-    interest: 9862,
-    principal: 193169
+    monthlyPayment: 1014277.4141810436,
+    principalAmount: 759333.700781427,
+    interestAmount: 254943.71339961662,
+    outstandingBalance: 8801056
   },
   {
-    date: '7-Aug-2017',
+    date: '14-Oct-2019',
     month: 3,
-    balance: 795481,
-    payment: 203031,
-    interest: 8252,
-    principal: 194778
+    monthlyPayment: 1014277.4141810436,
+    principalAmount: 779582.5994689318,
+    interestAmount: 234694.8147121119,
+    outstandingBalance: 8021473
   },
   {
-    date: '7-Sep-2017',
+    date: '14-Nov-2019',
     month: 4,
-    balance: 599079,
-    payment: 203031,
-    interest: 6629,
-    principal: 196402
+    monthlyPayment: 1014277.4141810436,
+    principalAmount: 800371.4687881032,
+    interestAmount: 213905.94539294037,
+    outstandingBalance: 7221102
   },
   {
-    date: '7-Oct-2017',
+    date: '14-Dec-2019',
     month: 5,
-    balance: 401041,
-    payment: 203031,
-    interest: 4992,
-    principal: 198038
+    monthlyPayment: 1014277.4141810436,
+    principalAmount: 821714.707955786,
+    interestAmount: 192562.70622525763,
+    outstandingBalance: 6399387
   },
   {
-    date: '7-Nov-2017',
+    date: '14-Jan-2020',
     month: 6,
-    balance: 201353,
-    payment: 203031,
-    interest: 3342,
-    principal: 199689
+    monthlyPayment: 1014277.4141810436,
+    principalAmount: 843627.1001679403,
+    interestAmount: 170650.31401310334,
+    outstandingBalance: 5555760
   },
   {
-    date: '7-Dec-2017',
+    date: '14-Feb-2020',
     month: 7,
-    balance: 0,
-    payment: 203031,
-    interest: 1678,
-    principal: 201353
+    monthlyPayment: 1014277.4141810436,
+    principalAmount: 866123.8228390854,
+    interestAmount: 148153.59134195826,
+    outstandingBalance: 4689636
+  },
+  {
+    date: '14-Mar-2020',
+    month: 8,
+    monthlyPayment: 1014277.4141810436,
+    principalAmount: 889220.4581147943,
+    interestAmount: 125056.95606624933,
+    outstandingBalance: 3800416
+  },
+  {
+    date: '14-Apr-2020',
+    month: 9,
+    monthlyPayment: 1014277.4141810436,
+    principalAmount: 912933.0036645222,
+    interestAmount: 101344.41051652147,
+    outstandingBalance: 2887483
+  },
+  {
+    date: '14-May-2020',
+    month: 10,
+    monthlyPayment: 1014277.4141810436,
+    principalAmount: 937277.8837622427,
+    interestAmount: 76999.53041880087,
+    outstandingBalance: 1950205
+  },
+  {
+    date: '14-Jun-2020',
+    month: 11,
+    monthlyPayment: 1014277.4141810436,
+    principalAmount: 962271.9606625693,
+    interestAmount: 52005.45351847441,
+    outstandingBalance: 987933
+  },
+  {
+    date: '14-Jul-2020',
+    month: 12,
+    monthlyPayment: 1014277.4141810436,
+    principalAmount: 987932.5462802377,
+    interestAmount: 26344.867900805897,
+    outstandingBalance: 0
   }
-];
+]
+*/
+```
+
+### Calculate Loan Payment Period (PMT)
+
+Payment for a loan based on constant payments and a constant interest rate.
+
+```js
+const monthlyPayment = stark.PMT(rate, tenor, principal);
+// 1014277.4141810436
 ```
 
 ## License
