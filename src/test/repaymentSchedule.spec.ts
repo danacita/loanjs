@@ -3,16 +3,18 @@ import { expect } from 'chai';
 import '../interfaces';
 import RepaymentSchedule from '../repaymentSchedule';
 import {
+  expectedRepaymentScheduleGracePeriod,
   expectedRepaymentScheduleOne,
-  expectedRepaymentScheduleTwo,
   expectedRepaymentScheduleThree,
-  expectedRepaymentScheduleGracePeriod
+  expectedRepaymentScheduleTwo,
+  expectedRepaymentScheduleZeroInterest
 } from './fixtures';
 
 describe('Repayment Schedule', () => {
   let repaymentScheduleOne: any;
   let repaymentScheduleTwo: any;
   let repaymentScheduleThree: any;
+  let repaymentScheduleZeroInterestRate: any;
 
   beforeEach(() => {
     repaymentScheduleOne = new RepaymentSchedule({
@@ -38,6 +40,15 @@ describe('Repayment Schedule', () => {
       balanceRequested: 4520500,
       origination: 3.0
     });
+
+    repaymentScheduleZeroInterestRate = new RepaymentSchedule({
+      startDate: new Date(2019, 11, 25),
+      tenor: 3,
+      interestRatePerYear: 0,
+      balanceRequested: 10700000,
+      origination: 0
+    });
+
   });
 
   it('should initialize with the default values', () => {
@@ -71,6 +82,11 @@ describe('Repayment Schedule', () => {
     // Third Case of Repayment Schedule
     const generatedRepaymentScheduleThree = repaymentScheduleThree.generateSchedule();
     expect(generatedRepaymentScheduleThree).to.deep.equal(expectedRepaymentScheduleThree);
+
+    // Fourth case zero interest rate
+    const generatedRepaymentScheduleZeroInterest = repaymentScheduleZeroInterestRate.generateSchedule();
+    expect(generatedRepaymentScheduleZeroInterest).to.deep.equal(expectedRepaymentScheduleZeroInterest);
+
   });
 
   it('should check the output from generateSchedule from RepaymentSchedulewith grace period', () => {

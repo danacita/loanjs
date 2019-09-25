@@ -51,8 +51,7 @@ export default class RepaymentSchedule {
     this._currentDate = startDate;
     this._tenor = tenor;
     this._interestRatePerYear = interestRatePerYear / 100;
-    this._interestRatePerMonth =
-      this._interestRatePerYear === 0 ? 0.00000000000001 : interestRatePerYear / 12 / 100;
+    this._interestRatePerMonth = this._interestRatePerYear / 12;
     this._loanAmount = balanceRequested;
     this._origination = origination;
     this._gracePeriod = gracePeriod;
@@ -105,8 +104,8 @@ export default class RepaymentSchedule {
           // Use ceiling as scheduled payment to avoid off-by-one errors, such that
           // borrower can always pay an integer amount and it will always be sufficient.
           payment: Math.ceil(value.payment),
-          interest: value.interest,
-          principal: value.principal
+          interest: Math.ceil(value.interest),
+          principal: Math.ceil(value.principal)
         };
       }
     );
@@ -124,10 +123,14 @@ export default class RepaymentSchedule {
    */
   private _PMT = (): number => {
     const i = this._interestRatePerMonth;
-
     const L = this._loanAmountAfterOriginationFee();
     const n = this._numberOfPayments() - this._gracePeriod;
-    return (L * i) / (1 - Math.pow(1 + i, -n));
+
+    if (i) {
+      return (L * i) / (1 - Math.pow(1 + i, -n));
+    }
+
+    return L / n;
   };
 
   private _loanAmountAfterOriginationFee = (): number => {
